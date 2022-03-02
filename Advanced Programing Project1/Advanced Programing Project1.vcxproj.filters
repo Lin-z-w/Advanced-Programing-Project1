@@ -18,9 +18,42 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Calculator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Administrator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Commodity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Order.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Administrator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="File Processing.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Commodity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Order.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iSQL.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

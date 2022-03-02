@@ -139,9 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Administrator.cpp" />
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="Commodity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Order.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Commodity.h" />
+    <ClInclude Include="Constant.h" />
+    <ClInclude Include="File Processing.h" />
+    <ClInclude Include="Administrator.h" />
+    <ClInclude Include="iSQL.h" />
+    <ClInclude Include="Order.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
