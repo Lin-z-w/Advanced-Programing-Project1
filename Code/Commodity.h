@@ -8,6 +8,7 @@ class Commodity
 public:
 	Commodity();
 	~Commodity();
+	void add_commodity();
 
 private:
 	struct Node {

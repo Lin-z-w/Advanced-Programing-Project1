@@ -8,6 +8,7 @@ class Order
 public:
 	Order();
 	~Order();
+	void add_order();
 
 private:
 	struct Node {
