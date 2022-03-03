@@ -1,8 +1,0 @@
-﻿  Administrator.cpp
-  Calculator.cpp
-  Commodity.cpp
-  main.cpp
-  Order.cpp
-  User.cpp
-  正在生成代码...
-D:\VS练习\Advanced-Programing-Project1\Advanced Programing Project1\Calculator.cpp(7): error C4716: “Calculator”: 必须返回一个值
