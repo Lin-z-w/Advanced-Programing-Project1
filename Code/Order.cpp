@@ -2,7 +2,6 @@
 
 Order::Order()
 {
-	orderhead = nullptr, ordertail = nullptr;
 }
 
 Order::~Order()

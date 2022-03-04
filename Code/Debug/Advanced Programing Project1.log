@@ -1,8 +1,12 @@
 ﻿  Administrator.cpp
+  Buyer.cpp
   Calculator.cpp
   Commodity.cpp
+  Datebase.cpp
+  initial Interface.cpp
   main.cpp
   Order.cpp
+  Seller.cpp
   User.cpp
   正在生成代码...
-D:\VS练习\Advanced-Programing-Project1\Advanced Programing Project1\Calculator.cpp(7): error C4716: “Calculator”: 必须返回一个值
+  Advanced Programing Project1.vcxproj -> D:\VS练习\Advanced-Programing-Project1\Code\Debug\Advanced Programing Project1.exe

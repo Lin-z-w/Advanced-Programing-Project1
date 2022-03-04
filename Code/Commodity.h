@@ -1,5 +1,4 @@
 #pragma once
-#include<iostream>
 #include<string>
 using namespace std;
 
@@ -11,12 +10,8 @@ public:
 	void add_commodity();
 
 private:
-	struct Node {
-		string commodityID, commedityName, description, sellerID, addedDate, state;
-		int number;
-		float price;
-		Node* next;
-	};
-	Node* commodityhead, * commoditytail;
+	string commodityID, commedityName, description, sellerID, addedDate, state;
+	int number;
+	float price;
 };
 

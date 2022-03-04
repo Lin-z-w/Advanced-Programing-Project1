@@ -33,15 +33,24 @@
     <ClCompile Include="Order.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="initial Interface.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Seller.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Buyer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Datebase.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Administrator.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="File Processing.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Commodity.h">
@@ -54,6 +63,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="iSQL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Initial Interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Buyer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Seller.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Datebase.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
