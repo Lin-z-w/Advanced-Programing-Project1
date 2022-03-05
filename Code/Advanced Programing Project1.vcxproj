@@ -163,6 +163,11 @@
     <ClInclude Include="Seller.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="commodity.txt" />
+    <Text Include="order.txt" />
+    <Text Include="user.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

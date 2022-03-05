@@ -6,7 +6,7 @@ class User
 {
 public:
 	User();
-	User(string userID_in, string userName_in, string password_in, string phoneNumber_in, string adress_in, string userState_in, int balance_in);
+	User(string userID_in, string userName_in, string password_in, string phoneNumber_in, string adress_in, double balance_in, string userState_in);
 	~User();
 
 	void U_add_user();//向链表尾部增加用户
@@ -18,5 +18,5 @@ public:
 
 protected:
 	string userID, userName, password, phoneNumber, adress, userState;
-	int balance;
+	double balance;
 };
