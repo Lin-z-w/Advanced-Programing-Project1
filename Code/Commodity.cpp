@@ -1,4 +1,6 @@
+#include<iostream>
 #include"Commodity.h"
+using namespace std;
 
 Commodity::Commodity(string commodityID1, string commodityName1, double price1, int number1, string description1, string sellerID1, string addedDate1, string state1)
 {
@@ -15,3 +17,4 @@ Commodity::Commodity(string commodityID1, string commodityName1, double price1, 
 Commodity::~Commodity()
 {
 }
+

@@ -9,6 +9,9 @@ public:
 	~Commodity();
 	void add_commodity();
 
+	friend void admin_instruction(string instruction);
+	friend void seller_instruction(string instruction, string sellerid);
+
 private:
 	string commodityID, commedityName, description, sellerID, addedDate, state;
 	int number;

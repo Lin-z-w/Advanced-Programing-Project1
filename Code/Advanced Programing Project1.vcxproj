@@ -146,6 +146,7 @@
     <ClCompile Include="Commodity.cpp" />
     <ClCompile Include="Datebase.cpp" />
     <ClCompile Include="initial Interface.cpp" />
+    <ClCompile Include="iSQL.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="Seller.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="commands.txt" />
     <Text Include="commodity.txt" />
     <Text Include="order.txt" />
     <Text Include="user.txt" />

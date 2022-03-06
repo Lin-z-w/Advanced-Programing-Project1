@@ -4,6 +4,7 @@
 #include"User.h"
 #include"Order.h"
 #include"Commodity.h"
+#include"Administrator.h"
 
 typedef map<string, User> User_map;
 typedef map<string, Commodity> Commodity_map;
@@ -26,9 +27,15 @@ public:
 	void final_commodity_imformation();//将商品链表写入文件中
 	void final_order_imformation();//将订单链表写入文件中
 
-private:
+	/*User_map get_user();
+	Commodity_map get_commodity();
+	Order_map get_order();
+	Administrator get_admin();*/
+
 	User_map user;
 	Commodity_map commodity;
 	Order_map order;
+	Administrator admin;
+private:
 };
 

@@ -1,3 +1,6 @@
 #pragma once
+#include"Datebase.h"
 
-void choose_identity();
+void Choose_identity();
+void Administrator_login();
+

@@ -11,8 +11,10 @@
 #include"Datebase.h"
 using namespace std;
 
+Datebase mydate;
+
 int main() {
-	Datebase myDate;
+	Choose_identity();
 
 	return 0;
 }

@@ -3,7 +3,9 @@
 #include<iostream>
 using namespace std;
 
-void choose_identity() {
+extern Datebase mydate;
+
+void Choose_identity() {
 	int choice = 0;
 	while (true) {
 		cout << "=============================================" << endl;
@@ -20,22 +22,49 @@ void choose_identity() {
 		switch (choice)
 		{
 		case 1:
-		
+			
 			break;
 		case 2:
 		
 			break;
 		case 3:
-			return;
+			Administrator_login();
 			break;
 		case 4:
-			
+			return;
 			break;
 		default:
 			cout << "输入错误！！！请重新输入。" << endl;
-			choose_identity();
 			break;
 		}
-		choose_identity();
+	}
+}
+
+void Administrator_login() {
+	string name, password;
+	while (true) {
+		cout << "请输入管理员姓名：";
+		cin >> name;
+		if (cin.fail()) {
+			cin.clear();
+			cout << "输入错误！！！请重新输入。" << endl;
+			cin.ignore(10000, '\n');
+			continue;
+		}
+		cout << "请输入密码：";
+		cin >> password;
+		if (cin.fail()) {
+			cin.clear();
+			cout << "输入错误！！！请重新输入。" << endl;
+			cin.ignore(10000, '\n');
+			continue;
+		}
+		if (name == mydate.admin.get_name() && password == mydate.admin.get_password()) {
+			mydate.admin.choice();
+		}
+		else {
+			cout << "管理员姓名或密码错误！！！即将返回上一界面......" << endl;
+		}
+		break;
 	}
 }

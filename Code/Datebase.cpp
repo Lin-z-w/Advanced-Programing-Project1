@@ -197,3 +197,16 @@ void Datebase::final_commodity_imformation() {
 void Datebase::final_order_imformation() {
 
 }
+
+//User_map Datebase::get_user() {
+//	return user;
+//}
+//Commodity_map Datebase::get_commodity() {
+//	return commodity;
+//}
+//Order_map Datebase::get_order() {
+//	return order;
+//}
+//Administrator Datebase::get_admin() {
+//	return admin;
+//}

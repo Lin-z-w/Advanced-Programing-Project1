@@ -6,12 +6,12 @@ public:
 	Seller();
 	~Seller();
 
-	void S_choice();
-	void S_issue_commodity();
-	void S_look_up_icommodity();
-	void S_change_icommodity_attribute();
-	void S_pull_icommodity();
-	void S_look_up_iorder();
+	void choice();
+	void issue_commodity();
+	void look_up_icommodity();
+	void change_icommodity_attribute();
+	void pull_icommodity();
+	void look_up_iorder();
 
 private:
 

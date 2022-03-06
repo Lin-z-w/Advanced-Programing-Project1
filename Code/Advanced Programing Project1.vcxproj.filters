@@ -45,6 +45,9 @@
     <ClCompile Include="Datebase.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="iSQL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="User.h">
@@ -86,6 +89,9 @@
       <Filter>资源文件</Filter>
     </Text>
     <Text Include="order.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="commands.txt">
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
