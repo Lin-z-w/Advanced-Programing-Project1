@@ -1,1 +1,53 @@
 
+2022-03-08 19:22:44: UPDATE commodity SET commodityState = remove WHERE sellerID = U005
+2022-03-08 19:22:44: UPDATE user SET userState = inactive WHERE userID = U005
+2022-03-08 19:44:12: SELECT * FROM commodity
+2022-03-08 19:44:17: SELECT * FROM commodity WHERE commodityName CONTAINS bad
+2022-03-08 19:44:21: SELECT * FROM order
+2022-03-08 19:44:29: SELECT * FROM commodity WHERE commodityName CONTAINS ppp
+2022-03-08 19:48:26: SELECT * FROM commodity
+2022-03-08 19:52:12: SELECT * FROM commodity
+2022-03-08 19:52:19: SELECT * FROM commodity WHERE commodityName CONTAINS aaa
+2022-03-08 19:52:24: SELECT * FROM order
+2022-03-08 19:52:31: SELECT * FROM user
+2022-03-08 19:56:02: UPDATE commodity SET commodityState = remove WHERE sellerID = U002
+2022-03-08 19:56:02: UPDATE user SET userState = inactive WHERE userID = U002
+2022-03-08 19:56:10: SELECT * FROM commodity
+2022-03-08 19:56:45: UPDATE commodity SET commodityState = remove WHERE commodityID = M001
+2022-03-08 19:59:26: UPDATE commodity SET commodityState = remove WHERE sellerID = U001
+2022-03-08 19:59:26: UPDATE user SET userState = inactive WHERE userID = U001
+2022-03-08 19:59:30: SELECT * FROM commodity
+2022-03-08 19:59:33: SELECT * FROM order
+2022-03-08 19:59:39: SELECT * FROM user
+2022-03-08 23:26:28: UPDATE commodity SET commodityState = remove WHERE sellerID = U001
+2022-03-08 23:26:28: UPDATE user SET userState = inactive WHERE userID = U001
+2022-03-08 23:26:30: SELECT * FROM commodity
+2022-03-08 23:26:35: SELECT * FROM user
+2022-03-08 23:30:29: UPDATE commodity SET commodityState = remove WHERE sellerID = U001
+2022-03-08 23:30:29: UPDATE user SET userState = inactive WHERE userID = U001
+2022-03-08 23:30:32: SELECT * FROM user
+2022-03-08 23:30:41: SELECT * FROM order
+2022-03-08 23:30:46: SELECT * FROM commodity
+2022-03-08 23:32:35: SELECT * FROM commodity
+2022-03-08 23:32:37: SELECT * FROM user
+2022-03-08 23:32:46: UPDATE commodity SET commodityState = remove WHERE sellerID = U001
+2022-03-08 23:32:46: UPDATE user SET userState = inactive WHERE userID = U001
+2022-03-08 23:32:48: SELECT * FROM commodity
+2022-03-08 23:32:51: SELECT * FROM user
+2022-03-08 23:33:21: SELECT * FROM commodity
+2022-03-08 23:33:29: SELECT * FROM commodity WHERE commodityName CONTAINS gar
+2022-03-08 23:33:32: SELECT * FROM order
+2022-03-08 23:33:34: SELECT * FROM user
+2022-03-08 23:33:58: UPDATE commodity SET commodityState = remove WHERE sellerID = U002
+2022-03-08 23:33:58: UPDATE user SET userState = inactive WHERE userID = U002
+2022-03-09 00:04:37: SELECT * FROM commodity
+2022-03-09 00:04:43: SELECT * FROM user
+2022-03-09 00:05:10: UPDATE commodity SET commodityState = remove WHERE commodityID = M001
+2022-03-09 00:06:15: SELECT * FROM user
+2022-03-09 00:06:17: SELECT * FROM commodity
+2022-03-09 00:06:28: UPDATE commodity SET commodityState = remove WHERE sellerID = U001
+2022-03-09 00:06:28: UPDATE user SET userState = inactive WHERE userID = U001
+2022-03-09 00:10:30: SELECT * FROM user
+2022-03-09 00:10:31: SELECT * FROM order
+2022-03-09 00:10:36: SELECT * FROM commodity WHERE commodityName CONTAINS 12
+2022-03-09 00:10:37: SELECT * FROM commodity

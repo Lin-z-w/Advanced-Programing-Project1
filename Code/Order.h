@@ -9,6 +9,16 @@ public:
 	~Order();
 	void add_order();
 
+	string get_orderID();
+	string get_commodityID();
+	string get_sellerID();
+	string get_buyerID();
+	string get_date();
+	int get_number();
+	double get_unitPrice();
+
+	friend void admin_instruction(string instruction);
+
 private:
 	string orderID, commodityID, sellerID, buyerID, date;
 	int number;

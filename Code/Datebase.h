@@ -27,6 +27,12 @@ public:
 	void final_commodity_imformation();//将商品链表写入文件中
 	void final_order_imformation();//将订单链表写入文件中
 
+	bool is_repeat_name();
+
+	string new_userID();
+	string new_commodityID();
+	string new_orderID();
+
 	/*User_map get_user();
 	Commodity_map get_commodity();
 	Order_map get_order();

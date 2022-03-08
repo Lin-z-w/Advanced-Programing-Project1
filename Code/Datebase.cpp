@@ -1,6 +1,7 @@
 #include "Datebase.h"
 #include<iostream>
 #include<fstream>
+#include<iomanip>
 using namespace std;
 
 Datebase::Datebase() {
@@ -9,7 +10,9 @@ Datebase::Datebase() {
 	initial_order_imformation();
 }
 Datebase::~Datebase() {
-
+	final_user_imformation();
+	final_commodity_imformation();
+	final_order_imformation();
 }
 
 void Datebase::initial_user_imformation() {
@@ -189,13 +192,117 @@ void Datebase::initial_order_imformation() {
 }
 
 void Datebase::final_user_imformation() {
-
+	ofstream out_file("user.txt",ios::out);
+	out_file << "userID,username,password,phoneNumber,address,balance,userState" << endl;
+	if (user.empty()) {
+		return;
+	}
+	for (User_map::iterator it = user.begin(); it != user.end(); it++) {
+		out_file << it->second.get_ID() + "," + it->second.get_name() + "," + it->second.get_password() + "," +
+			it->second.get_phoneNumber() + "," + it->second.get_address() + "," << fixed << setprecision(1) << it->second.get_balance() 
+			<< "," + it->second.get_userState() << endl;
+	}
+	out_file.close();
 }
 void Datebase::final_commodity_imformation() {
-
+	ofstream out_file("commodity.txt", ios::out);
+	out_file << "commodityID,commodityName,price,number,description,sellerID,addedDate,state" << endl;
+	if (commodity.empty()) {
+		return;
+	}
+	for (Commodity_map::iterator it = commodity.begin(); it != commodity.end(); it++) {
+		out_file << it->second.get_commodityID() + "," + it->second.get_commodityName() + ","
+			<< fixed << setprecision(1) << it->second.get_price() << "," << it->second.get_number()
+			<< "," + it->second.get_description() + "," + it->second.get_sellerID() 
+			<< "," + it->second.get_addedDate() + "," + it->second.get_state() << endl;
+	}
+	out_file.close();
 }
 void Datebase::final_order_imformation() {
+	ofstream out_file("order.txt", ios::out);
+	out_file << "orderID,commodityID,unitPrice,number,date,sellerID,buyerID" << endl;
+	if (order.empty()) {
+		return;
+	}
+	for (Order_map::iterator it = order.begin(); it != order.end(); it++) {
+		out_file << it->second.get_orderID() + "," + it->second.get_commodityID() + ","
+			<< fixed << setprecision(1) << it->second.get_unitPrice()
+			<< "," << it->second.get_number() << "," + it->second.get_date() + "," + it->second.get_sellerID() + "," + it->second.get_buyerID() << endl;
+	}
+	out_file.close();
+}
 
+string Datebase::new_userID() {
+	if (user.empty()) {
+		return "U001";
+	}
+	string userID;
+	User_map::iterator last_user = user.end();
+	last_user--;
+	userID = last_user->second.get_ID();
+	int cnt = 3;
+	while (cnt != 0) {
+		if (userID[cnt] == '9') {
+			userID[cnt] = '0';
+		}
+		else {
+			userID[cnt]++;
+			return userID;
+		}
+		cnt--;
+	}
+	return "用户人数已满！！！";
+}
+string Datebase::new_commodityID() {
+	if (commodity.empty()) {
+		return "M001";
+	}
+	string commodityID;
+	Commodity_map::iterator last_commodity = commodity.end();
+	last_commodity--;
+	commodityID = last_commodity->second.get_commodityID();
+	int cnt = 3;
+	while (cnt != 0) {
+		if (commodityID[cnt] == '9') {
+			commodityID[cnt] = '0';
+		}
+		else {
+			commodityID[cnt]++;
+			return commodityID;
+		}
+		cnt--;
+	}
+	return "商品目录已满！！！";
+}
+string Datebase::new_orderID() {
+	if (order.empty()) {
+		return "T001";
+	}
+	string new_orderID;
+	Order_map::iterator last_order = order.end();
+	last_order--;
+	new_orderID = last_order->second.get_orderID();
+	int cnt = 3;
+	while (cnt != 0) {
+		if (new_orderID[cnt] == '9') {
+			new_orderID[cnt] = '0';
+		}
+		else {
+			new_orderID[cnt]++;
+			return new_orderID;
+		}
+		cnt--;
+	}
+	return "订单目录已满！！！";
+}
+
+bool Datebase::is_repeat_name(string name) {
+	for (User_map::iterator it = user.begin(); it != user.end(); it++) {
+		if (name == it->second.get_name()) {
+			return true;
+		}
+	}
+	return false;
 }
 
 //User_map Datebase::get_user() {

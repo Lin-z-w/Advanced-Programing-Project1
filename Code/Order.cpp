@@ -14,3 +14,25 @@ Order::Order(string orderID1, string commodityID1, double unitPrice1, int number
 Order::~Order()
 {
 }
+
+string Order::get_orderID() {
+	return orderID;
+}
+string Order::get_commodityID() {
+	return commodityID;
+}
+string Order::get_sellerID() {
+	return sellerID;
+}
+string Order::get_buyerID() {
+	return buyerID;
+}
+string Order::get_date() {
+	return date;
+}
+int Order::get_number() {
+	return number;
+}
+double Order::get_unitPrice() {
+	return unitPrice;
+}
