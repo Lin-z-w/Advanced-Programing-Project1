@@ -23,7 +23,7 @@ void Choose_identity() {
 		switch (choice)
 		{
 		case 1:
-			
+			User_login();
 			break;
 		case 2:
 			User_register();
@@ -41,6 +41,60 @@ void Choose_identity() {
 	}
 }
 
+void User_login() {
+	bool is_find_name = false;
+	string userName, password;
+	cout << "请输入用户名：";
+	cin >> userName;
+	cout << "请输入用户密码：";
+	cin >> password;
+	for (User_map::iterator it = mydate.user.begin(); it != mydate.user.end(); it++) {
+		if (it->second.get_name() == userName) {
+			is_find_name = true;
+			if (it->second.get_password() == password) {
+				it->second.Choice();
+				return;
+			}
+			else {
+				cout << "密码错误！！！" << endl;
+				return;
+			}
+			break;
+		}
+	}
+	if (!is_find_name) cout << "该用户名不存在！！！" << endl;
+}
+void User_register() {
+	string userID, userName, password, phoneNumber, address, userState = userState_a, y_or_n;
+	double balance = 0;
+	cout << "请输入用户名：";
+	cin >> userName;
+	userID = mydate.new_userID();
+	if (userID == "用户人数已满！！！") {
+		cout << userID << endl;
+		return;
+	}
+	while (mydate.is_repeat_name(userName)) {
+		cout << "用户名重复！！！请重新输入！！！" << endl;
+		cout << "请输入用户名：";
+		cin >> userName;
+	}
+	cout << "请输入密码：";
+	cin >> password;
+	cout << "请输入电话号码：";
+	cin >> phoneNumber;
+	cout << "请输入地址：";
+	cin >> address;
+	cout << "确定注册该用户吗？" << endl;
+	cout << "(y/n):";
+	cin >> y_or_n;
+	if (y_or_n == "n") {
+		cout << "已放弃注册！！！" << endl;
+		return;
+	}
+	User new_user(userID, userName, password, phoneNumber, address, balance, userState);
+	mydate.user.insert(pair<string, User>(userID, new_user));
+}
 void Administrator_login() {
 	string name, password;
 	while (true) {
@@ -61,39 +115,11 @@ void Administrator_login() {
 			continue;
 		}
 		if (name == mydate.admin.get_name() && password == mydate.admin.get_password()) {
-			mydate.admin.choice();
+			mydate.admin.Choice();
 		}
 		else {
 			cout << "管理员姓名或密码错误！！！即将返回上一界面......" << endl;
 		}
 		break;
 	}
-}
-void User_register() {
-	string userID, userName, password, phoneNumber, address, userState = userState_a, y_or_n;
-	double balance = 0;
-	cout << "请输入用户名：";
-	cin >> userName;
-	while (mydate.is_repeat_name(userName)) {
-		cout << "用户名重复！！！请重新输入！！！" << endl;
-		cout << "请输入用户名：";
-		cin >> userName;
-	}
-	cout << "请输入密码：";
-	cin >> password;
-	cout << "请输入电话号码：";
-	cin >> phoneNumber;
-	cout << "请输入地址：";
-	cin >> address;
-	userID = mydate.new_userID();
-	cout << "确定注册该用户吗？" << endl;
-	cout << "(y/n):" << endl;
-	cin >> y_or_n;
-	if (y_or_n == "n") {
-		cout << "已放弃注册！！！" << endl;
-		return;
-	}
-	User new_user(userID, userName, password, phoneNumber, address, balance, userState);
-	mydate.user.insert(pair<string, User>(userID, new_user));
-	//cin >>
 }

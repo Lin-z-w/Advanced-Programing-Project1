@@ -23,7 +23,7 @@ string Administrator::get_name() {
 string Administrator::get_password() {
 	return password;
 }
-void Administrator::choice() {
+void Administrator::Choice() {
 	int num = 0;
 	string instruction, commodityName, userID, y_or_n, commodityID;
 	while (true) {

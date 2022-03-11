@@ -3,15 +3,10 @@
 class Seller: public User
 {
 public:
-	Seller();
+	Seller(string userID_in, string userName_in, string password_in, string phoneNumber_in, string address_in, double balance_in, string userState_in);
 	~Seller();
 
-	void choice();
-	void issue_commodity();
-	void look_up_icommodity();
-	void change_icommodity_attribute();
-	void pull_icommodity();
-	void look_up_iorder();
+	void Choice();
 
 private:
 

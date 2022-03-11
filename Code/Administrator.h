@@ -8,7 +8,7 @@ public:
 	Administrator();
 	~Administrator();
 
-	void choice();//管理员的选择
+	void Choice();//管理员的选择
 	string get_name();
 	string get_password();
 

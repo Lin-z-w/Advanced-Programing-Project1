@@ -4,14 +4,9 @@
 class Buyer: public User
 {
 public:
-	Buyer();
+	Buyer(string userID_in, string userName_in, string password_in, string phoneNumber_in, string address_in, double balance_in, string userState_in);
 	~Buyer();
-	void choice();//买家选择
-	void look_up_commodity();//查看正在出售的商品
-	void buy_commodity();//购买商品
-	void search_commodity();//搜索商品
-	void look_up_iorder();//查看自己的订单
-	void look_up_detail();//查看商品详情
+	void Choice();//买家选择
 
 private:
 
