@@ -1,4 +1,5 @@
 #include"Seller.h"
+#include"iSQL.h"
 #include<iostream>
 using namespace std;
 
@@ -18,6 +19,7 @@ Seller::~Seller()
 
 void Seller::Choice() {
     int num = 0;
+    string instruction;
     while (true) {
         cout << endl;
         cout << "===================================================================================" << endl;
@@ -38,7 +40,8 @@ void Seller::Choice() {
             
             break;
         case 2:
-            
+            instruction = "SELECT * FROM commodity";
+            seller_instruction(instruction);
             break;
         case 3:
             
@@ -47,7 +50,7 @@ void Seller::Choice() {
             
             break;
         case 5:
-            
+            instruction = "SELECT * FROM order";
             break;
         case 6:
             return;
