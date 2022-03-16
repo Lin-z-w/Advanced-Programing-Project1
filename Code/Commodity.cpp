@@ -1,5 +1,6 @@
 #include<iostream>
 #include"Commodity.h"
+#include"Constant.h"
 using namespace std;
 
 Commodity::Commodity() {
@@ -46,4 +47,12 @@ int Commodity::get_number() {
 double Commodity::get_price() {
 	return price;
 }
-
+void Commodity::set_price(double p) {
+	price = p;
+}
+void Commodity::set_description(string d) {
+	description = d;
+}
+void Commodity::remove_it() {
+	state = commodityState_r;
+}

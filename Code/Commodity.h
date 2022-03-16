@@ -18,6 +18,9 @@ public:
 	string get_state();
 	int get_number();
 	double get_price();
+	void set_price(double p);
+	void set_description(string d);
+	void remove_it();
 
 	friend void admin_instruction(string instruction);
 	friend void seller_instruction(string instruction, string sellerid);

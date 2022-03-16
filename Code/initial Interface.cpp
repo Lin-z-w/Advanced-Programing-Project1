@@ -8,6 +8,7 @@ extern Datebase mydate;
 void Choose_identity() {
 	int choice = 0;
 	while (true) {
+		cout << endl;
 		cout << "=============================================" << endl;
 		cout << "1.用户登录 2.用户注册 3.管理员登录 4.退出程序" << endl;
 		cout << "=============================================" << endl;
