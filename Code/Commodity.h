@@ -21,6 +21,7 @@ public:
 	void set_price(double p);
 	void set_description(string d);
 	void remove_it();
+	void set_number(int n);
 
 	friend void admin_instruction(string instruction);
 	friend void seller_instruction(string instruction, string sellerid);

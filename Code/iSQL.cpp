@@ -215,7 +215,7 @@ void seller_instruction(string instruction, string sellerID) {
 		string commodityName, description;
 		double price = 0;
 		int cnt = 0, past = 30, number = 0;
-		for (int cur = 30; cur < instruction.length(); cur++) {
+		for (unsigned int cur = 30; cur < instruction.length(); cur++) {
 			if (instruction[cur] == ',') {
 				switch (cnt)
 				{
@@ -270,4 +270,134 @@ void seller_instruction(string instruction, string sellerID) {
 }
 void buyer_instruction(string instruction, string buyerID) {
 	commond_in_file(instruction);
+	switch (instruction[0])
+	{
+	case 'S':
+	{
+		if (instruction == "SELECT * FROM commodity") {
+			cout << "**********************************************************************************************" << endl;
+			//printf("%-10s %-20s %-6s %-15s %-10s %-10s\n", "ID", "名称", "价格", "上架时间", "卖家ID","商品状态");
+			cout << left << setw(ID_len + 6) << "商品ID" << setw(commodityName_len + 4) << "名称"
+				<< setw(10) << "价格" << setw(14) << "上架时间"
+				<< setw(10) << "数量" << setw(10) << "卖家ID" << endl;
+			for (Commodity_map::iterator it = mydate.commodity.begin(); it != mydate.commodity.end(); it++) {
+				if (it->second.get_state() == commodityState_o) {
+					cout << left << setw(ID_len + 6) << it->second.get_commodityID() << setw(commodityName_len + 4) << it->second.get_commodityName()
+						<< setw(10) << fixed << setprecision(1) << it->second.get_price() << setw(14) << it->second.get_addedDate()
+						<< setw(10) << it->second.get_number() << setw(10) << it->second.get_sellerID() << endl;
+				}
+			}
+			cout << "**********************************************************************************************" << endl;
+		}
+		else if (instruction == "SELECT * FROM order") {
+			cout << "*************************************************************************" << endl;
+			cout << left << setw(10) << "订单ID" << setw(10) << "商品ID"
+				<< setw(10) << "商品单价"
+				<< setw(10) << "商品数量"
+				<< setw(14) << "交易时间" << setw(10) << "卖家ID" << endl;
+			for (Order_map::iterator it = mydate.order.begin(); it != mydate.order.end(); it++) {
+				if (buyerID == it->second.get_buyerID()) {
+					cout << left << setw(10) << it->second.get_orderID() << setw(10) << it->second.get_commodityID()
+						<< setw(10) << fixed << setprecision(1) << it->second.get_unitPrice()
+						<< setw(10) << it->second.get_number()
+						<< setw(14) << it->second.get_date() << setw(10) << it->second.get_sellerID() << endl;
+				}
+			}
+			cout << "*************************************************************************" << endl;
+		}
+		else {
+			if (instruction[39] == 'I') {
+				Commodity_map::iterator a_commodity = mydate.commodity.find(instruction.substr(instruction.length() - 4, 4));
+				if (a_commodity != mydate.commodity.end() && a_commodity->second.get_state() != commodityState_r) {
+					cout << "*********************************" << endl;
+					cout << "商品名称：" << a_commodity->second.get_commodityName() << endl;
+					cout << "商品价格：" << a_commodity->second.get_price() << endl;
+					cout << "商品描述：" << a_commodity->second.get_description() << endl;
+					cout << "上架时间：" << a_commodity->second.get_addedDate() << endl;
+					cout << "卖家ID：" << a_commodity->second.get_sellerID() << endl;
+					cout << "*********************************" << endl;
+				}
+				else {
+					cout << "出售中的商品没有找到你想要的商品！！！即将返回上一界面！！！" << endl;
+				}
+			}
+			else {
+				string commodityName = instruction.substr(53, instruction.length() - 53);
+				bool is_find = false;
+				cout << "****************************************************************************************" << endl;
+				for (Commodity_map::iterator it = mydate.commodity.begin(); it != mydate.commodity.end(); it++) {
+					if (it->second.get_commodityName().find(commodityName) != string::npos && it->second.get_state() != commodityState_r) {
+						if (!is_find) {
+							cout << left << setw(ID_len + 6) << "商品ID" << setw(commodityName_len + 4) << "名称"
+								<< setw(10) << "价格" << setw(14) << "上架时间"
+								<< setw(10) << "数量" << setw(10) << "商品状态" << endl;
+						}
+						is_find = true;
+						cout << left << setw(ID_len + 6) << it->second.get_commodityID() << setw(commodityName_len + 4) << it->second.get_commodityName()
+							<< setw(10) << fixed << setprecision(1) << it->second.get_price() << setw(14) << it->second.get_addedDate()
+							<< setw(10) << it->second.get_number() << setw(10) << it->second.get_state() << endl;
+					}
+				}
+				if (!is_find) cout << "没有找到想要的商品！！！" << endl;
+				cout << "****************************************************************************************" << endl;
+			}
+		}
+		break;
+	}
+	case 'I':
+	{
+		//instruction = "INSERT INTO order VALUES (" + orderID + "," + a_commodity->second.get_commodityID()
+			//+ "," + price + "," + to_string(number) + "," + buydate + "," + a_commodity->second.get_sellerID() + "," + userID + ")";
+		string orderID, commodityID, date, sellerID, buyerID, information = instruction.substr(26, instruction.length() - 27);
+		double unitPrice = 0;
+		int cnt = 0, past = 0, number = 0;
+		for (int cur = 0; cur < information.length(); cur++) {
+			if (information[cur] == ',') {
+				switch (cnt)
+				{
+				case 0:
+					orderID = information.substr(past, cur - past);
+					break;
+				case 1:
+					commodityID = information.substr(past, cur - past);
+					break;
+				case 2:
+					unitPrice = atof(information.substr(past, cur - past).c_str());
+					break;
+				case 3:
+					number = atoi(information.substr(past, cur - past).c_str());
+					break;
+				case 4:
+					date = information.substr(past, cur - past);
+					break;
+				case 5:
+					sellerID = information.substr(past, cur - past);
+					buyerID = information.substr(cur + 1);
+					break;
+				default:
+					break;
+				}
+				cnt++;
+				past = cur + 1;
+			}
+		}
+		Order a_order(orderID, commodityID, unitPrice, number, date, sellerID, buyerID);
+		mydate.order.insert(pair<string, Order>(orderID, a_order));
+		break;
+	}
+	case 'U':
+	{
+		//instruction = "UPDATE commodity SET number = " + to_string(restnumber) + "WHERE commodityID = " + commodityID;
+		string commodityID = instruction.substr(instruction.length() - 4, 4);
+		int cnt = 30, number = 0;
+		while (instruction[cnt] != ' ') {
+			cnt++;
+		}
+		number = atoi(instruction.substr(30, cnt - 30).c_str());
+		mydate.commodity[commodityID].set_number(number);
+		break;
+	}
+	default:
+		break;
+	}
 }

@@ -4,7 +4,8 @@
 using namespace std;
 
 Commodity::Commodity() {
-
+	number = 0;
+	price = 0;
 }
 
 Commodity::Commodity(string commodityID1, string commodityName1, double price1, int number1, string description1, string sellerID1, string addedDate1, string state1)
@@ -55,4 +56,7 @@ void Commodity::set_description(string d) {
 }
 void Commodity::remove_it() {
 	state = commodityState_r;
+}
+void Commodity::set_number(int n) {
+	number = n;
 }
