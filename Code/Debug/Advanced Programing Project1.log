@@ -1,16 +1,7 @@
-﻿  Administrator.cpp
-  Buyer.cpp
-  Commodity.cpp
-  Datebase.cpp
-D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Datebase.cpp(34,25): warning C4018: “<”: 有符号/无符号不匹配
-D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Datebase.cpp(95,25): warning C4018: “<”: 有符号/无符号不匹配
-D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Datebase.cpp(149,25): warning C4018: “<”: 有符号/无符号不匹配
-  Seller.cpp
-D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Seller.cpp(99,35): warning C4018: “<”: 有符号/无符号不匹配
-  User.cpp
-  iSQL.cpp
-D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\iSQL.cpp(354,25): warning C4018: “<”: 有符号/无符号不匹配
-  initial Interface.cpp
-  main.cpp
-  正在生成代码...
+﻿  Calculator.cpp
+D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Calculator.cpp(19,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Calculator.cpp(54,24): warning C4018: “<”: 有符号/无符号不匹配
+D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Calculator.cpp(116,24): warning C4018: “<”: 有符号/无符号不匹配
+D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Calculator.cpp(153,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Calculator.cpp(157,20): warning C4018: “<”: 有符号/无符号不匹配
   Advanced Programing Project1.vcxproj -> D:\Visual Studio\Procedure\Advanced-Programing-Project1\Code\Debug\Advanced Programing Project1.exe

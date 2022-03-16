@@ -13,8 +13,8 @@ using namespace std;
 
 Datebase mydate;
 
-int main() {
-	Choose_identity();
-
-	return 0;
-}
+//int main() {
+//	Choose_identity();
+//
+//	return 0;
+//}

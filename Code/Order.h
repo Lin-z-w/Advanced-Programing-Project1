@@ -7,7 +7,6 @@ class Order
 public:
 	Order(string orderID1, string commodityID1, double unitPrice1, int number1, string date1, string sellerID1, string buyerID1);
 	~Order();
-	void add_order();
 
 	string get_orderID();
 	string get_commodityID();
