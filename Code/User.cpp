@@ -5,6 +5,8 @@
 #include<iostream>
 
 extern Datebase mydate;
+extern void iget_time(char* p);
+extern double Calculator(string formula);
 
 User::User() 
 {
@@ -26,6 +28,14 @@ User::~User()
 {
 }
 
+void one_double(string& num) {
+	for (int i = 0; i < num.length(); i++) {
+		if (num[i] == '.') {
+			num = num.substr(0, i + 2);
+			break;
+		}
+	}
+}
 void User::Choice() {
 	string instruction;
 	int num;
@@ -170,6 +180,37 @@ void User::Change_my_imformation() {
 	}
 }
 void User::Look_up_my_imformation() {
+	string formula = "0";
+	for (Topup_vector::iterator it = mydate.top_up_histroy.begin(); it != mydate.top_up_histroy.end(); it++) {
+		if (it->ID == userID) {
+			formula += " + " + it->money;
+		}
+	}
+	map<string, string> my_order;
+	for (Order_map::iterator it = mydate.order.begin(); it != mydate.order.end(); it++) {
+		string number = to_string(it->second.get_number()), price = to_string(it->second.get_unitPrice());
+		one_double(price);
+		if (it->second.get_sellerID() == userID) {
+			if (my_order.find(number) != my_order.end()) {
+				my_order[number] += " + " + price;
+			}
+			else {
+				my_order.insert(pair<string, string>(number, price));
+			}
+		}
+		if (it->second.get_buyerID() == userID) {
+			if (my_order.find(number) != my_order.end()) {
+				my_order[number] += " - " + price;
+			}
+			else {
+				my_order.insert(pair<string, string>(number, "-" + price));
+			}
+		}
+	}
+	for (map<string, string>::iterator it = my_order.begin(); it != my_order.end(); it++) {
+		formula += " + " + it->first + " * (" + it->second + ")";
+	}
+	balance = Calculator(formula);
 	cout << "*********************" << endl;
 	cout << "用户ID：" << userID << endl;
 	cout << "用户名：" << userName << endl;
@@ -183,9 +224,18 @@ void User::Top_up() {
 	cout << "请输入充值数目：";
 	cin >> num;
 	cout << "请扫描下方二维码（bushi" << endl;
-	balance += num;
+	cout << endl;
+	Top_up_histroy a_top;
+	a_top.ID = userID;
+	a_top.money = to_string(num);
+	char a_date[11];
+	iget_time(a_date);
+	string date(a_date);
+	a_top.topUpDate = date;
+	mydate.top_up_histroy.push_back(a_top);
 	cout << "充值成功！！！" << endl;
 }
+
 
 string User::get_ID() {
 	return userID;
@@ -207,4 +257,10 @@ string User::get_userState() {
 }
 double User::get_balance() {
 	return balance;
+}
+void User::add_balance(double b) {
+	balance += b;
+}
+void User::minus_balance(double b) {
+	balance -= b;
 }

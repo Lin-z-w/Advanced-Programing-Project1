@@ -61,7 +61,7 @@ void Seller::Choice() {
                 cin.ignore(10000, '\n');
                 break;
             }
-            cout << "请输入商品描述";
+            cout << "请输入商品描述:";
             cin >> description;
             instruction = "INSERT INTO commodity VALUES (" + commodityName 
                 + "," + to_string(price) + "," + to_string(number) + "," + description + ")";
@@ -119,8 +119,8 @@ void Seller::Choice() {
             cout << "商品价格：" << fixed << setprecision(1) << a_commodity->second.get_price() << endl;
             cout << "商品数量：" << a_commodity->second.get_number() << endl;
             cout << "商品描述：" << a_commodity->second.get_description() << endl;
-            cout << "************************";
-            cout << "确定要修改这一属性吗？？？";
+            cout << "************************" << endl;
+            cout << "确定要修改这一属性吗？？？(y/n)";
             cin >> y_or_n;
             if (y_or_n == "n") {
                 cout << "已放弃修改！！！" << endl;

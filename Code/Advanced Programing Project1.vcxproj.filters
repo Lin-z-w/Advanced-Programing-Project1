@@ -21,9 +21,6 @@
     <ClCompile Include="Calculator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Administrator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -46,6 +43,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="iSQL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -82,7 +82,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="user.txt">
+    <Text Include="commands.txt">
       <Filter>资源文件</Filter>
     </Text>
     <Text Include="commodity.txt">
@@ -91,7 +91,10 @@
     <Text Include="order.txt">
       <Filter>资源文件</Filter>
     </Text>
-    <Text Include="commands.txt">
+    <Text Include="user.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="top_up_histroy.txt">
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>

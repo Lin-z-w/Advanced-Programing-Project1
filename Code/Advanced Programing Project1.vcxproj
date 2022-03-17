@@ -168,6 +168,7 @@
     <Text Include="commands.txt" />
     <Text Include="commodity.txt" />
     <Text Include="order.txt" />
+    <Text Include="top_up_histroy.txt" />
     <Text Include="user.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

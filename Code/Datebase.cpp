@@ -8,11 +8,13 @@ Datebase::Datebase() {
 	initial_user_imformation();
 	initial_commodity_imformation();
 	initial_order_imformation();
+	initial_topuphistroy_imformation();
 }
 Datebase::~Datebase() {
 	final_user_imformation();
 	final_commodity_imformation();
 	final_order_imformation();
+	final_topuphistroy_imformation();
 }
 
 void Datebase::initial_user_imformation() {
@@ -190,6 +192,29 @@ void Datebase::initial_order_imformation() {
 	}
 	in_file.close();
 }
+void Datebase::initial_topuphistroy_imformation() {
+	ifstream in_file("top_up_histroy.txt", ios::in);
+	if (!in_file) {
+		in_file.close();
+		ofstream out_file("top_up_histroy.txt", ios::out);
+		out_file.close();
+		return;
+	}
+	string a;
+	in_file >> a;
+	while (!in_file.eof()) {
+		string ID, date, money;
+		in_file >> ID;
+		in_file >> date;
+		in_file >> money;
+		Top_up_histroy new_histroy;
+		new_histroy.ID = ID;
+		new_histroy.topUpDate = date;
+		new_histroy.money = money;
+		top_up_histroy.push_back(new_histroy);
+	}
+	in_file.close();
+}
 
 void Datebase::final_user_imformation() {
 	ofstream out_file("user.txt",ios::out);
@@ -228,6 +253,20 @@ void Datebase::final_order_imformation() {
 		out_file << it->second.get_orderID() + "," + it->second.get_commodityID() + ","
 			<< fixed << setprecision(1) << it->second.get_unitPrice()
 			<< "," << it->second.get_number() << "," + it->second.get_date() + "," + it->second.get_sellerID() + "," + it->second.get_buyerID() << endl;
+	}
+	out_file.close();
+}
+void Datebase::final_topuphistroy_imformation() {
+	ofstream out_file("top_up_histroy.txt", ios::out);
+	out_file << "userID,Date,money" << endl;
+	if (top_up_histroy.empty()) {
+		return;
+	}
+	for (Topup_vector::iterator it = top_up_histroy.begin(); it != top_up_histroy.end(); it++) {
+		if (it != top_up_histroy.begin()) {
+			out_file << endl;
+		}
+		out_file << it->ID << " " << it->topUpDate << " " << it->money;
 	}
 	out_file.close();
 }

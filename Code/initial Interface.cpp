@@ -52,6 +52,10 @@ void User_login() {
 	for (User_map::iterator it = mydate.user.begin(); it != mydate.user.end(); it++) {
 		if (it->second.get_name() == userName) {
 			is_find_name = true;
+			if (it->second.get_userState() == userState_i) {
+				cout << "该用户已被封禁！！！" << endl;
+				return;
+			}
 			if (it->second.get_password() == password) {
 				it->second.Choice();
 				return;

@@ -200,10 +200,17 @@ void seller_instruction(string instruction, string sellerID) {
 			cout << "商品描述：" << a_commodity->second.get_description() << endl;
 			cout << "************************" << endl;
 			cout << "您确定要下架该商品吗？？？（y/n）";
-			cin >> y_or_n;
-			if (y_or_n == "n") {
-				cout << "已放弃下架该商品！！！";
-				return;
+			while (true) {
+				cin >> y_or_n;
+				if (y_or_n == "n") {
+					cout << "已放弃发布该商品！！！" << endl;
+					return;
+				}
+				else if (y_or_n != "y") {
+					cout << "请输入y或者n！！！！" << endl;
+					continue;
+				}
+				break;
 			}
 			cout << "商品下架成功！！！" << endl;
 			a_commodity->second.remove_it();

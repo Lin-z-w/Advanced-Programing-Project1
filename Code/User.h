@@ -23,6 +23,8 @@ public:
 	string get_address();
 	string get_userState();
 	double get_balance();
+	void add_balance(double b);
+	void minus_balance(double b);
 
 	friend void admin_instruction(string instruction);
 	friend Administrator;

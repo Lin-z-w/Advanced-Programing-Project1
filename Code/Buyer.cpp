@@ -64,9 +64,11 @@ void Buyer::Choice() {
 			}
 			else if (number > a_commodity->second.get_number()) {
 				cout << "购买的商品数量超过商品总数！！！" << endl;
+				break;
 			}
 			if (balance < a_commodity->second.get_price() * number) {
 				cout << "余额不足！！！" << endl;
+				break;
 			}
 			cout << "确定要购买该商品吗？？？(y/n):";
 			cin >> y_or_n;
@@ -94,7 +96,8 @@ void Buyer::Choice() {
 				instruction = "UPDATE commodity SET commodityState = remove WHERE commodityID = " + commodityID;
 				seller_instruction(instruction, a_commodity->second.get_sellerID());
 			}
-			balance -= a_commodity->second.get_price() * number;
+			mydate.user[userID].minus_balance(a_commodity->second.get_price() * number);
+			mydate.user[a_commodity->second.get_sellerID()].add_balance(a_commodity->second.get_price() * number);
 			break;
 		}
 		case 3://Done
